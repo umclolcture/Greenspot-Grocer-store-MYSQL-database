@@ -6,11 +6,19 @@ _______________________________
 Database Testing:
 _______________________________
 Proof that data can be retrieved from all of the tables in one query
-//  (select 
-     items.item_num,`description`,item_type,Location,quantity,quantity_on_hand ,date_sold,price,customers 
-     from items
-     left join sales
-     on items.item_num=sales.item_num);
+
+   ///        select* from
+              ( select items.item_num,`description`,item_type,Location,quantity,quantity_on_hand ,purchase_date,cost,vendor
+              from  items inner join purchases 
+              on items.item_num=purchases.item_num  ) AS b 
+
+              union
+              (select 
+              items.item_num,`description`,item_type,Location,quantity,quantity_on_hand ,date_sold,price,customers 
+              from items
+              left join sales
+             on items.item_num=sales.item_num);
+
 
 
 One or more queries that demonstrate the joining of tables with SQL code
