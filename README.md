@@ -22,6 +22,9 @@ Proof that data can be retrieved from all of the tables in one query
 
 
 One or more queries that demonstrate the joining of tables with SQL code
+
+
+
 ///   select*from items inner join purchases
       on items.item_num=purchases.item_num order by trans_date asc;
 	
@@ -31,6 +34,9 @@ One or more queries that demonstrate the joining of tables with SQL code
 
 
 Query to display all the purchsed items/inventory.
+
+
+
 // select
    items.item_num,`description`,item_type,Location,quantity,quantity_on_hand ,purchase_date,cost,vendor
    from items inner join purchases
