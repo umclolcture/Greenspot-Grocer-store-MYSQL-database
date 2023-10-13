@@ -13,6 +13,7 @@ Proof that data can be retrieved from all of the tables in one query
               on items.item_num=purchases.item_num  ) AS b 
 
               union
+	      
               (select 
               items.item_num,`description`,item_type,Location,quantity,quantity_on_hand ,date_sold,price,customers 
               from items
